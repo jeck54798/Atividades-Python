@@ -11,7 +11,9 @@ media = (nota1 + nota2 + nota3 + nota4) / 4
 print("A sua média foi", media)
 if(media >= 80):
     print("Parabéns, você foi aprovado")
+elif(media >= 60):
+    print("Você está de recuperação")
 else:
-    print("Que pena, você está a baixo da média")
+    print("Que pena, você foi reprovado")
 
 print("Continue o bom trabalho")
