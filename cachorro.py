@@ -1,38 +1,56 @@
 class Cachorro:
-
-    def __init__(self, nome, raca, comida):
+    def _init_(self, nome, raca, comida):
         self.nome = nome
         self.raca = raca
         self.comida = comida
-        self.acordado = True
-        self.satisfeito = False
-        self.feliz = True
-    
+        self.acordada = True
+        self.feliz = False
+
     def comer(self):
         if self.comida > 0:
             self.comida -= 1
-            self.satisfeito = True
-            print(f"{self.nome} comeu um lanche bastante satisfatório")
+            self.feliz = True
+            print(f"{self.nome} comeu e agora está feliz")
         else:
-            print(f"{self.nome} está com fome")
+            print(f"{self.nome} não tem comida suficiente")
 
-    def dormir (self):
-        self.acordado = False
+    def dormir(self):
+        self.acordada = False
         print(f"{self.nome} foi dormir")
 
-    def acordar (self):
-        self.acordado = True
+    def acordar(self):
+        self.acordada = True
         print(f"{self.nome} acordou")
 
-    def ignorar (self):
-        self.feliz = False
-        print(f"{self.nome} está triste, porque está sendo ignorado")
-
-    def brincar (self):
+    def brincar(self):
         self.feliz = True
-        print(f"{self.nome} está feliz porque você brincou com ele")
+        print(f"{self.nome} brincou e agora está feliz!")
 
-    def latir (self):
+    def ignora(self):
+        self.feliz = False
+        print(f"{self.nome} está triste porque foi ignorado")
+
+    def latir(self):
+        if self.acordada:
+            print(f"{self.nome} está latindo! AU AU!")
+        else:
+            print(f"{self.nome} está dormindo e não pode latir")
+
+# Criando os objetos Cachorro
+Cachorro1 = Cachorro("Rex", "Labrador", 3)
+Cachorro2 = Cachorro("Bolt", "Pastor Alemão", 2)
+
+# Interagindo com o Cachorro1
+Cachorro1.comer()
+Cachorro1.brincar()
+Cachorro1.latir()
+Cachorro1.dormir()
+Cachorro1.acordar()
+
+# Interagindo com o Cachorro2
+Cachorro2.ignora()  # Método corrigido
+Cachorro2.comer()
+Cachorro2.latir()
         if self.acordado == True:
             print(f"{self.nome} está latindo! 'AU AU'")
         else: print(f"{self.nome} está sosegado")
